@@ -1,7 +1,7 @@
 apiVersion: v2
 type: application
 name: ovpn-portal
-description: An OIDC authenticated client configuration generator for OpenVPN tunnels
+description: OIDC client config generator for OpenVPN tunnels
 
 version: 0.1.0
 appVersion: 0.1.0
