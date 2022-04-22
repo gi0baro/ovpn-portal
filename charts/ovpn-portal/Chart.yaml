@@ -1,0 +1,21 @@
+apiVersion: v2
+type: application
+name: ovpn-portal
+description: An OIDC authenticated client configuration generator for OpenVPN tunnels
+
+version: 0.1.0
+appVersion: 0.1.0
+kubeVersion: ">=1.14.0-0"
+
+home: https://github.com/gi0baro/ovpn-portal
+sources:
+  - https://github.com/gi0baro/ovpn-portal
+maintainers:
+  - name: Giovanni Barillari
+    email: gi0baro@d4net.org
+
+dependencies:
+- name: minio
+  version: '3.*.*'
+  repository: https://charts.min.io/
+  condition: minio.enabled
