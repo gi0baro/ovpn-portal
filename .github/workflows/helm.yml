@@ -3,7 +3,7 @@ name: Chart
 on:
   push:
     branches:
-      - master
+      - __temp__
 
 jobs:
   release:
