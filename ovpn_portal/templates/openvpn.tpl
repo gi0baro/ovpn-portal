@@ -21,5 +21,5 @@ cipher {{ =cipher }}
 {{ =cert }}
 </cert>
 <key>
-{{ =key }}
+{{ =private_key }}
 </key>

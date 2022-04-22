@@ -36,7 +36,7 @@ async def build_vpn_config(profile: str, cn: str) -> Tuple[str, str]:
             "cert": cert_data["cert"],
             "cipher": vpn_data.get("cipher", "AES-256-CBC"),
             "domain": vpn_data.get("domain"),
-            "key": cert_data["key"],
+            "private_key": cert_data["key"],
             "port": vpn_data["port"],
             "remote": vpn_data["endpoint"],
             "extras": {**app.config.openvpn.config, **vpn_data.get("config", {})}

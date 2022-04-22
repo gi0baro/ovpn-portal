@@ -7,7 +7,8 @@ RUN poetry install --no-dev
 FROM alpine:3 as fetcher
 
 RUN apk add --no-cache curl
-RUN curl -sSL -o cfssl https://github.com/cloudflare/cfssl/releases/download/v1.6.1/cfssl_1.6.1_linux_amd64
+RUN curl -sSL -o cfssl https://github.com/cloudflare/cfssl/releases/download/v1.6.1/cfssl_1.6.1_linux_amd64 && \
+    chmod +x cfssl
 
 FROM docker.io/library/node:16 as css
 

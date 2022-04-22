@@ -30,9 +30,7 @@ def _build_crl_data(serials: List[str]) -> bytes:
 
 
 def build_cert(profile: str, cn: str) -> Dict[str, str]:
-    cfssl_config_path = os.path.join(
-        app.root_path, 'config', 'cfssl_config.json'
-    )
+    cfssl_config_path = os.path.join(app.root_path, 'config', 'cfssl.json')
     ca_data = app.config.certs.intermediates[profile]
     try:
         proc = subprocess.run(
@@ -66,8 +64,11 @@ def build_cert(profile: str, cn: str) -> Dict[str, str]:
         cert_info = json.loads(proc.stdout)
     except subprocess.CalledProcessError as e:
         raise CFSSLError
+    ca_components = [ca_data.cert]
+    if app.config.certs.root.cert:
+        ca_components.insert(0, app.config.certs.root.cert)
     return {
-        "ca": "\n".join([app.config.certs.root.cert, ca_data.cert]),
+        "ca": "\n".join(ca_components),
         "cert": cert_data["cert"][:-1],
         "key": cert_data["key"][:-1],
         "serial": cert_info["serial_number"],
