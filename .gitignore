@@ -1,0 +1,6 @@
+__pycache__
+.venv
+
+ovpn_portal/config/*.json
+ovpn_portal/config/*.yml
+ovpn_portal/logs
