@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: emmett
+    command: develop --host=0.0.0.0
+    volumes:
+      - ./ovpn_portal:/app/app
+    ports:
+      - "8000:8000"

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ =current.request.language or 'en' }}">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0" />
+
+        <title>OpenVPN Portal</title>
+
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,300italic" rel="stylesheet" type="text/css" />
+
+        {{ include_static "bundled/main.css" }}
+    </head>
+    <body class="text-gray-900 font-os h-screen">
+        <div class="container mx-auto px-4 h-full">
+            <div class="flex flex-1 flex-col flex-wrap items-center justify-center h-full">
+                {{ block main }}
+                {{ include }}
+                {{ end }}
+            </div>
+        </div>
+    </body>
+</html>

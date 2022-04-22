@@ -1,0 +1,42 @@
+session_key:
+default_vpn:
+
+idp:
+  dex:
+    client_id: ""
+    client_secret: ""
+    endpoint: ""
+
+object_storage:
+  bucket: ovpn-portal
+  region: eu-west-1
+  access_key: ""
+  secret_key: ""
+  path_certs: certs
+  path_crl: crl
+  path_locks: locks
+  path_states: crstates
+
+pki:
+  root_ca: |-
+    ca certifcate
+
+  client:
+    expiry: 720h
+    key:
+      algo: rsa
+      size: 2048
+
+    names:
+      C: US
+      L: New York
+      ST: NY
+      O: Example Company ltd
+      OU: Technology
+
+  crl:
+    expiry: "31536000"
+
+openvpn:
+  config:
+    reneg-sec: 0

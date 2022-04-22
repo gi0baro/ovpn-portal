@@ -1,0 +1,19 @@
+{{ extend "layout.html" }}
+
+<p class="mb-20 text-2xl">
+    Almost there, mate!
+</p>
+<p class="text-center leading-relaxed mb-4">
+    We're crafting your personal VPN configuration.
+</p>
+<p class="text-center leading-relaxed">
+    Once completed, your browser will download the configuration automatically.</br>
+    You can import the downloaded configuration in your preferred OpenVPN client.
+</p>
+
+<script type="text/javascript">
+    var dst = "{{ =url('._exchange', params={'code': code}) }}";
+    document.addEventListener("DOMContentLoaded", function() {
+        window.location.href = dst;
+    });
+</script>

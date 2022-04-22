@@ -1,0 +1,21 @@
+common:
+  endpoint: 127.0.0.1
+  port: 1194
+  domain: vpn.example.com
+  cert: |-
+    cert contents
+  key: |-
+    key contents
+
+custom:
+  endpoint: 127.0.0.1
+  port: 1195
+  domain: vpn2.example.com
+  priority: 2
+  groups:
+    - group1
+    - group2
+  cert: |-
+    cert contents
+  key: |-
+    key contents
