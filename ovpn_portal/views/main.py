@@ -1,4 +1,4 @@
-from emmett import request, response, session, url
+from emmett import Injector, request, response, session, url
 
 from .. import app, idp
 from ..idp import ExchangePipe
@@ -7,12 +7,20 @@ from . import views
 from ._pipes import VPNAuthPipe
 
 
-@views.route("/")
+class MainContext(Injector):
+    namespace = "ctx"
+
+    @property
+    def org_name(self):
+        return app.config.org_name
+
+
+@views.route("/", injectors=[MainContext()])
 async def index():
     return {}
 
 
-@views.route()
+@views.route(injectors=[MainContext()])
 async def exchange():
     return {"code": request.query_params.code}
 

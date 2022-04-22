@@ -1,12 +1,12 @@
 {{ extend "layout.html" }}
 
-<h1 class="text-5xl mb-12">OpenVPN Portal</h1>
+<h1 class="text-5xl mb-12">{{ =ctx.org_name }} OpenVPN Portal</h1>
 <p class="mb-24 text-xl">
     Welcome traveler
 </p>
 <p class="text-center leading-relaxed mb-12">
     This utility will help you to get a VPN configuration.</br>
-    You will need to sign in with your account,
+    You will need to sign in with your {{ =ctx.org_name }} account,
     and the utility will build a new configuration for you.</br></br>
     You can import the downloaded configuration in your preferred OpenVPN client.
 </p>

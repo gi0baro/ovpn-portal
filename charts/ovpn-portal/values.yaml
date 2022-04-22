@@ -124,6 +124,7 @@ minio:
 
 ## OVPN-Portal configuration
 config:
+  org_name: Example
   # session_key:
   default_vpn: ""
 
