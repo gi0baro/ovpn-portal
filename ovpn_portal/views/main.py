@@ -14,6 +14,9 @@ class MainContext(Injector):
     def org_name(self):
         return app.config.org_name
 
+    @property
+    def support_email_addr(self):
+        return app.config.support_email_addr
 
 @views.route("/", injectors=[MainContext()])
 async def index():

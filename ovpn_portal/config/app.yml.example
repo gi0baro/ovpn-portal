@@ -1,4 +1,5 @@
 org_name: Example
+support_email_addr: support@example.com
 session_key:
 default_vpn:
 
