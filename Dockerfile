@@ -1,4 +1,4 @@
-FROM ghcr.io/gi0baro/poetry-bin:3.9 as deps
+FROM ghcr.io/gi0baro/poetry-bin:3.9-1.3 as deps
 
 COPY pyproject.toml .
 COPY poetry.lock .
