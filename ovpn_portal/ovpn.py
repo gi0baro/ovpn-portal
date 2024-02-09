@@ -89,6 +89,6 @@ async def revoke_vpn_configs(profile: str, cn: str):
                 f"{app.config.object_storage.path_states}/{profile}",
                 "\n".join(all_serials).encode("utf8")
             )
-            await put_object(f"{app.config.object_storage.path_crl}/{profile}", crl)
+            await put_object(f"{app.config.object_storage.path_crl}/{profile}.pem", crl)
     except LockError:
         raise ConcurrentRevocationsError
