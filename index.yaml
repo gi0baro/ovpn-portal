@@ -2,6 +2,28 @@ apiVersion: v1
 entries:
   ovpn-portal:
   - apiVersion: v2
+    appVersion: 0.1.1
+    created: "2024-02-09T11:26:41.199227274Z"
+    dependencies:
+    - condition: minio.enabled
+      name: minio
+      repository: https://charts.min.io/
+      version: 3.*.*
+    description: OIDC client config generator for OpenVPN tunnels
+    digest: 0c268d2e891377298cfb7ad74a78b409138d95b5fb7aee626f144b73ba317a63
+    home: https://github.com/gi0baro/ovpn-portal
+    kubeVersion: '>=1.14.0-0'
+    maintainers:
+    - email: gi0baro@d4net.org
+      name: Giovanni Barillari
+    name: ovpn-portal
+    sources:
+    - https://github.com/gi0baro/ovpn-portal
+    type: application
+    urls:
+    - https://github.com/gi0baro/ovpn-portal/releases/download/ovpn-portal-0.1.1/ovpn-portal-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
     appVersion: 0.1.0
     created: "2022-04-22T12:42:57.9844185Z"
     dependencies:
@@ -23,4 +45,4 @@ entries:
     urls:
     - https://github.com/gi0baro/ovpn-portal/releases/download/ovpn-portal-0.1.0/ovpn-portal-0.1.0.tgz
     version: 0.1.0
-generated: "2022-04-22T12:42:57.9844337Z"
+generated: "2024-02-09T11:26:41.199240298Z"
